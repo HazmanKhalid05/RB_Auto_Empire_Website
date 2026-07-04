@@ -1975,3 +1975,187 @@ footer {
         bottom: 20px;
     }
 }
+
+@media screen and (max-width: 768px){
+
+    html,
+    body{
+        width:100%;
+        max-width:100%;
+        overflow-x:hidden!important;
+    }
+
+    *{
+        max-width:100%;
+    }
+
+    .container{
+        width:100%!important;
+        max-width:100%!important;
+        padding-left:16px!important;
+        padding-right:16px!important;
+        margin:0 auto!important;
+    }
+
+    .page-hero,
+    .compact-hero{
+        padding:80px 0 45px!important;
+    }
+
+    .page-hero h1{
+        font-size:32px!important;
+        line-height:1.15;
+    }
+
+    .main-content{
+        padding:45px 0!important;
+    }
+
+    /* Vehicle Finder */
+    .vehicle-finder{
+        display:flex!important;
+        flex-direction:column!important;
+        gap:22px!important;
+        width:100%!important;
+        padding:22px!important;
+        margin-bottom:28px!important;
+    }
+
+    .vehicle-finder > div{
+        width:100%!important;
+        min-width:0!important;
+    }
+
+    .vehicle-finder h2{
+        font-size:28px!important;
+        line-height:1.15;
+    }
+
+    .finder-controls{
+        display:flex!important;
+        flex-direction:column!important;
+        gap:14px!important;
+        width:100%!important;
+    }
+
+    .finder-controls select,
+    .finder-controls button{
+        width:100%!important;
+        min-width:0!important;
+    }
+
+    /* Filter */
+    .filter-bar{
+        display:flex!important;
+        flex-direction:column!important;
+        align-items:stretch!important;
+        gap:16px!important;
+        width:100%!important;
+        overflow:hidden!important;
+    }
+
+    .filter-tabs{
+        display:flex!important;
+        flex-wrap:nowrap!important;
+        gap:10px!important;
+        overflow-x:auto!important;
+        overflow-y:hidden!important;
+        padding-bottom:10px!important;
+        scrollbar-width:none;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .filter-tabs::-webkit-scrollbar{
+        display:none;
+    }
+
+    .filter-tab{
+        flex:0 0 auto!important;
+        white-space:nowrap!important;
+    }
+
+    .search-box{
+        width:100%!important;
+    }
+
+    .search-box input,
+    .search-box input:focus{
+        width:100%!important;
+    }
+
+    /* Product Cards */
+    .grid-cards{
+        display:grid!important;
+        grid-template-columns:1fr!important;
+        gap:24px!important;
+        width:100%!important;
+    }
+
+    .card{
+        width:100%!important;
+        min-width:0!important;
+        overflow:hidden!important;
+    }
+
+    .product-img-container{
+        width:100%!important;
+        height:230px!important;
+    }
+
+    .product-img{
+        width:100%!important;
+        height:100%!important;
+        object-fit:cover!important;
+    }
+
+    .card-info{
+        padding:22px!important;
+    }
+
+    .price-row{
+        flex-direction:column!important;
+        align-items:stretch!important;
+        gap:14px!important;
+    }
+
+    .price-row .btn{
+        width:100%!important;
+    }
+
+    /* Floating compare jangan kacau mobile */
+    .compare-bar{
+        display:none!important;
+    }
+
+    /* Floating buttons */
+    .cart-floating{
+        right:14px!important;
+        bottom:84px!important;
+        z-index:1200!important;
+    }
+
+    .whatsapp-float{
+        right:14px!important;
+        bottom:18px!important;
+        z-index:1200!important;
+    }
+
+    .whatsapp-float span{
+        display:none!important;
+    }
+
+    /* Quick view mobile */
+    .quick-view-card{
+        grid-template-columns:1fr!important;
+        width:100%!important;
+        max-height:90vh!important;
+    }
+
+    .quick-img-wrap{
+        min-height:230px!important;
+    }
+
+    .quick-info{
+        padding:24px!important;
+    }
+}
