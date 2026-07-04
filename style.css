@@ -2185,3 +2185,426 @@ iframe{
         bottom: 20px;
     }
 }
+
+@media (max-width: 768px) {
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 92%;
+        max-width: 100%;
+    }
+
+    .vehicle-finder {
+        grid-template-columns: 1fr !important;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .finder-controls {
+        grid-template-columns: 1fr !important;
+    }
+
+    .filter-bar {
+        width: 100%;
+        overflow: hidden;
+        display: block;
+    }
+
+    .filter-tabs {
+        display: flex;
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        gap: 10px;
+        width: 100%;
+        padding-bottom: 12px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .filter-tab {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    .search-box {
+        width: 100%;
+        margin-top: 14px;
+    }
+
+    .search-box input,
+    .search-box input:focus {
+        width: 100% !important;
+    }
+
+    .grid-cards {
+        grid-template-columns: 1fr !important;
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .product-img-container {
+        height: 220px;
+    }
+}
+
+
+/* =========================================================
+   FINAL MOBILE FIX - RB AUTO EMPIRE
+   Put this at the VERY BOTTOM of style.css
+   Fixes mobile overflow, product tabs, finder, cards, cart, compare
+========================================================= */
+
+/* Prevent mobile page from sliding sideways */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Only show cart / compare if page contains product area.
+   This works with JS support below, but CSS also keeps layout safer. */
+body:not(.products-page) .cart-floating,
+body:not(.products-page) .cart-drawer,
+body:not(.products-page) .compare-bar,
+body:not(.products-page) .quick-view-modal {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+
+    html,
+    body,
+    main {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 92%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .site-header {
+        width: 100%;
+        max-width: 100vw;
+        overflow: hidden;
+    }
+
+    .header-box {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    .left-group {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .logo-area {
+        min-width: 0;
+        gap: 8px;
+    }
+
+    .logo-text {
+        font-size: 17px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .company-logo-img {
+        width: 42px;
+        height: 42px;
+        flex-shrink: 0;
+    }
+
+    .menu-toggle {
+        width: 42px;
+        height: 42px;
+        flex-shrink: 0;
+    }
+
+    .desktop-nav {
+        display: none !important;
+    }
+
+    .page-hero,
+    .compact-hero {
+        padding: 70px 0 42px !important;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .hero h1,
+    .page-hero h1 {
+        font-size: 32px !important;
+        line-height: 1.12;
+        max-width: 100%;
+        word-break: normal;
+    }
+
+    .hero p,
+    .page-hero p {
+        font-size: 15px !important;
+        max-width: 100%;
+    }
+
+    section.main-content,
+    .main-content {
+        padding: 42px 0 !important;
+        width: 100%;
+        max-width: 100vw;
+        overflow: hidden;
+    }
+
+    /* Vehicle finder fix */
+    .vehicle-finder {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 22px !important;
+        overflow: hidden;
+        gap: 18px;
+    }
+
+    .finder-controls {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        width: 100%;
+        max-width: 100%;
+        gap: 12px;
+    }
+
+    .finder-controls select,
+    .finder-controls .btn,
+    .vehicle-finder .btn {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Product category pills fix */
+    .filter-bar {
+        display: block !important;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        margin-bottom: 26px;
+        padding-bottom: 20px;
+    }
+
+    .filter-tabs {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 10px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 12px;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .filter-tabs::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .filter-tabs::-webkit-scrollbar-thumb {
+        background: var(--redline);
+        border-radius: 999px;
+    }
+
+    .filter-tab {
+        flex: 0 0 auto !important;
+        white-space: nowrap;
+        scroll-snap-align: start;
+        padding: 9px 16px;
+        font-size: 12px;
+    }
+
+    .search-box {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 14px;
+    }
+
+    .search-box input,
+    .search-box input:focus {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    /* Product card fix */
+    .grid-cards {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        width: 100%;
+        max-width: 100%;
+        gap: 22px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        overflow: hidden;
+    }
+
+    .card.filtered-out,
+    .filtered-out {
+        display: none !important;
+    }
+
+    .product-img-container {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+    }
+
+    .product-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-info {
+        padding: 20px;
+    }
+
+    .price-row,
+    .card-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .price-row .btn,
+    .card-actions .btn,
+    .card-actions .small-btn {
+        width: 100%;
+    }
+
+    .quick-btn {
+        opacity: 1 !important;
+        transform: none !important;
+        top: 58px;
+        right: 12px;
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .wishlist-btn {
+        right: 12px;
+        top: 12px;
+    }
+
+    /* Floating buttons do not block product cards */
+    .cart-floating {
+        right: 14px;
+        bottom: 86px;
+        padding: 12px 15px;
+        z-index: 1100;
+    }
+
+    .whatsapp-float {
+        right: 14px;
+        bottom: 18px;
+        padding: 13px 15px;
+        z-index: 1100;
+    }
+
+    .whatsapp-float span {
+        display: none;
+    }
+
+    .compare-bar {
+        left: 12px !important;
+        right: 12px !important;
+        width: auto !important;
+        max-width: none;
+        bottom: -220px;
+        transform: none !important;
+        border-radius: 18px;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+        z-index: 1200;
+    }
+
+    .compare-bar.active {
+        bottom: 14px;
+    }
+
+    .compare-bar .btn,
+    .compare-bar button {
+        width: 100%;
+    }
+
+    .quick-view-card {
+        grid-template-columns: 1fr !important;
+        width: 94vw;
+        max-width: 94vw;
+    }
+
+    .quick-img-wrap {
+        min-height: 230px;
+    }
+
+    .quick-info {
+        padding: 24px;
+    }
+
+    .map-panel,
+    .footer-grid,
+    .about-grid,
+    .contact-grid,
+    .admin-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .table-scroll {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        width: 91%;
+    }
+
+    .hero h1,
+    .page-hero h1 {
+        font-size: 28px !important;
+    }
+
+    .logo-text {
+        font-size: 15px;
+    }
+
+    .product-img-container {
+        height: 190px;
+    }
+
+    .filter-tab {
+        font-size: 11px;
+        padding: 8px 14px;
+    }
+}
