@@ -447,6 +447,7 @@ section.main-content { padding: 90px 0; }
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-soft);
+    min-width: 0;
 }
 
 .card {
@@ -1432,6 +1433,18 @@ footer {
   transform: translateY(0);
 }
 
+/* Touch devices never trigger :hover, so without this the Quick View
+   button would stay invisible (opacity: 0) and effectively unreachable. */
+@media (hover: none), (pointer: coarse) {
+  .quick-btn {
+    opacity: 1;
+    transform: translateY(0);
+    top: 58px;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
 /* FLOATING WIDGETS (CART & WHATSAPP) */
 .cart-floating {
   position: fixed;
@@ -1662,8 +1675,15 @@ footer {
   width: min(760px, 100%);
 }
 
+#compareTableWrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .compare-table {
   width: 100%;
+  min-width: 420px;
   border-collapse: collapse;
   margin-top: 18px;
 }
@@ -1787,8 +1807,16 @@ footer {
   color: #fff;
 }
 
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 18px;
+}
+
 .admin-table {
   width: 100%;
+  min-width: 480px;
   border-collapse: collapse;
   background: var(--panel-glass);
   border-radius: 18px;
@@ -1853,5 +1881,29 @@ footer {
   
   .hero h1 {
     font-size: 42px;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 12px 10px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .bar-row {
+    grid-template-columns: 70px 1fr 60px;
+    font-size: 13px;
+  }
+
+  .admin-hero {
+    padding: 70px 0;
+  }
+
+  .quick-info {
+    padding: 24px;
+  }
+
+  .quick-price {
+    font-size: 26px;
   }
 }
