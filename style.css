@@ -56,6 +56,13 @@ body {
     background-attachment: fixed;
 }
 
+.vimi-item:nth-child(1) p,
+.vimi-item:nth-child(2) p {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.9;
+}
+
  /* faint schematic grid — reads as blueprint / spec-sheet, not decoration */
 body::after {
     content: "";
