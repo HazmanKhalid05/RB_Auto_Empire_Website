@@ -1,456 +1,913 @@
+<!DOCTYPE html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RB Auto Empire | Shop Online</title>
-    <link rel="stylesheet" href="style.css">
+ <meta charset="utf-8"/>
+ <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+ <title>
+  RB Auto Empire | Shop Online
+ </title>
+ <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-
-<div class="page-loader" id="pageLoader"><div class="loader-mark"></div></div>
-<div class="redline-bar"><span></span></div>
-
-<header class="site-header">
-    <div class="container header-box">
-        <div class="left-group">
-            <button class="menu-toggle" id="mobile-menu" aria-label="Open sidebar menu" aria-expanded="false" type="button">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-
-            <a href="index.html" class="logo-area">
-                <img src="images/RB_Auto_Empire_Logo.png" alt="RB Auto Empire Logo" class="company-logo-img">
-                <div class="logo-text">RB <span>AUTO EMPIRE</span></div>
-            </a>
-        </div>
-
-        <nav class="desktop-nav" aria-label="Main navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html" class="active">Products</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="disclaimer.html">Disclaimer</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<nav class="sidebar" id="sidebar-menu" aria-label="Sidebar navigation">
-    <div class="sidebar-top">
-        <div class="sidebar-brand">RB <span>AUTO EMPIRE</span></div>
-        <p>Premium auto parts hub</p>
-    </div>
+ <div class="page-loader" id="pageLoader">
+  <div class="loader-mark">
+  </div>
+ </div>
+ <div class="redline-bar">
+  <span>
+  </span>
+ </div>
+ <header class="site-header">
+  <div class="container header-box">
+   <div class="left-group">
+    <button aria-expanded="false" aria-label="Open sidebar menu" class="menu-toggle" id="mobile-menu" type="button">
+     <span class="bar">
+     </span>
+     <span class="bar">
+     </span>
+     <span class="bar">
+     </span>
+    </button>
+    <a class="logo-area" href="index.html">
+     <img alt="RB Auto Empire Logo" class="company-logo-img" src="images/RB_Auto_Empire_Logo.png"/>
+     <div class="logo-text">
+      RB
+      <span>
+       AUTO EMPIRE
+      </span>
+     </div>
+    </a>
+   </div>
+   <nav aria-label="Main navigation" class="desktop-nav">
     <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="products.html" class="active">Products</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="disclaimer.html">Disclaimer</a></li>
+     <li>
+      <a href="index.html">
+       Home
+      </a>
+     </li>
+     <li>
+      <a href="about.html">
+       About Us
+      </a>
+     </li>
+     <li>
+      <a class="active" href="products.html">
+       Products
+      </a>
+     </li>
+     <li>
+      <a href="contact.html">
+       Contact Us
+      </a>
+     </li>
+     <li>
+      <a href="disclaimer.html">
+       Disclaimer
+      </a>
+     </li>
     </ul>
-</nav>
-<div class="overlay" id="overlay"></div>
-
-<main>
-    <section class="page-hero compact-hero">
-        <div class="container">
-            <span class="eyebrow">Shop Online</span>
-            <h1>Authentic Components Catalogue</h1>
-            <p>Select your automotive component and settle payments instantly via our integrated secure checkout dashboard.</p>
-        </div>
-    </section>
-
-    <section class="main-content">
-        <div class="container">
-
-            <div class="vehicle-finder glass-box" id="vehicleFinder">
-                <div>
-                    <span class="eyebrow">Smart Fitment</span>
-                    <h2>Vehicle Parts Finder</h2>
-                    <p>Choose your brand, model, and year to simulate compatible parts filtering.</p>
-                </div>
-                <div class="finder-controls">
-                    <select id="brandSelect"><option value="">Choose Brand</option><option>Perodua</option><option>Proton</option><option>Toyota</option><option>Honda</option></select>
-                    <select id="modelSelect"><option value="">Choose Model</option><option>Myvi</option><option>Saga</option><option>Vios</option><option>Civic</option></select>
-                    <select id="yearSelect"><option value="">Year</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option></select>
-                    <button class="btn" id="findPartsBtn" type="button">Find Parts</button>
-                </div>
-            </div>
-
-            <div class="filter-bar">
-                <div class="filter-tabs">
-                    <button class="filter-tab active" data-filter="all">All Parts</button>
-                    <button class="filter-tab" data-filter="engine">Engine</button>
-                    <button class="filter-tab" data-filter="braking">Braking</button>
-                    <button class="filter-tab" data-filter="handling">Handling</button>
-                    <button class="filter-tab" data-filter="electrical">Electrical</button>
-                    <button class="filter-tab" data-filter="transmission">Transmission</button>
-                    <button class="filter-tab" data-filter="cooling">Cooling</button>
-                    <button class="filter-tab" data-filter="lighting">Lighting</button>
-                </div>
-                <div class="search-box">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <input type="text" id="productSearch" placeholder="Search components..." autocomplete="off"><div class="search-suggestions" id="searchSuggestions"></div>
-                </div>
-            </div>
-
-            <div class="grid-cards">
-                <div class="card" data-category="engine">
-                    <button class="wishlist-btn" data-id="motor-oil" aria-label="Add to wishlist">
-                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"></path></svg>
-                    </button>
-                    <div class="product-img-container">
-                        <img src="images/Fully Synthetic Motor Oil (4L).jpeg" alt="Fully Synthetic Engine Oil" class="product-img">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-category">Engine Powertrain</span>
-                        <h3>Fully Synthetic Motor Oil (4L)</h3>
-                        <p>Premium 5W-40 viscosity rating. Advanced thermal control additives designed for high-stress operation and sludge defense.</p>
-                        <div class="price-row">
-                            <span class="price">RM 165.00</span>
-                            <button class="btn" onclick="openCheckout('Fully Synthetic Motor Oil (4L)', 165.00)">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="braking">
-                    <button class="wishlist-btn" data-id="brake-pads" aria-label="Add to wishlist">
-                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"></path></svg>
-                    </button>
-                    <div class="product-img-container">
-                        <img src="images/Ceramic-Brake-Pads.jpg" alt="Ceramic Brake Pads" class="product-img">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-category">Braking Safety</span>
-                        <h3>Ceramic Front Brake Pads</h3>
-                        <p>Engineered for Perodua Myvi and Alza models. Extreme structural noise mitigation paired with highly responsive bite matrices.</p>
-                        <div class="price-row">
-                            <span class="price">RM 75.00</span>
-                            <button class="btn" onclick="openCheckout('Ceramic Front Brake Pads', 75.00)">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="handling">
-                    <button class="wishlist-btn" data-id="shock-absorbers" aria-label="Add to wishlist">
-                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"></path></svg>
-                    </button>
-                    <div class="product-img-container">
-                        <img src="images/Heavy-Duty Gas Shock Absorbers.jpeg" alt="Shock Absorbers" class="product-img">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-category">Handling & Steering</span>
-                        <h3>Heavy-Duty Gas Shock Absorbers</h3>
-                        <p>Front-axle premium gas absorbers designed for high cornering stability, balanced tracking, and road vibration dampening.</p>
-                        <div class="price-row">
-                            <span class="price">RM 240.00</span>
-                            <button class="btn" onclick="openCheckout('Heavy-Duty Gas Shock Absorbers', 240.00)">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="engine">
-                    <button class="wishlist-btn" data-id="spark-plugs" aria-label="Add to wishlist">
-                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"></path></svg>
-                    </button>
-                    <div class="product-img-container">
-                        <img src="images/Laser Iridium Spark Plugs.jpeg" alt="Iridium Spark Plugs" class="product-img">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-category">Engine Ignition</span>
-                        <h3>Laser Iridium Spark Plugs</h3>
-                        <p>Optimizes total combustion efficiency, lowers fuel emission footprints, and guarantees faster cold-start responses. Set of 4 units.</p>
-                        <div class="price-row">
-                            <span class="price">RM 120.00</span>
-                            <button class="btn" onclick="openCheckout('Laser Iridium Spark Plugs', 120.00)">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="electrical">
-                    <button class="wishlist-btn" data-id="battery" aria-label="Add to wishlist">
-                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"></path></svg>
-                    </button>
-                    <div class="product-img-container">
-                        <img src="images/BOSCH NS60L.webp" alt="Maintenance-Free Battery" class="product-img">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-category">Electrical Infrastructure</span>
-                        <h3>Maintenance-Free Battery (NS60L)</h3>
-                        <p>High cold cranking amps (CCA) with advanced long-life alloy grids. Fully sealed dry architecture with zero maintenance upkeep.</p>
-                        <div class="price-row">
-                            <span class="price">RM 215.00</span>
-                            <button class="btn" onclick="openCheckout('Maintenance-Free Battery (NS60L)', 215.00)">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="braking">
-                    <button class="wishlist-btn" data-id="disc-rotor" aria-label="Add to wishlist">
-                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"></path></svg>
-                    </button>
-                    <div class="product-img-container">
-                        <img src="images/Ventilated Brake Disc Rotor.webp" alt="Disc Rotor" class="product-img">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-category">Braking Safety</span>
-                        <h3>Ventilated Brake Disc Rotor</h3>
-                        <p>Cross-vented, anti-warp structural metal alloys designed to dissipate extreme thermal friction loads safely and mitigate brake fade.</p>
-                        <div class="price-row">
-                            <span class="price">RM 180.00</span>
-                            <button class="btn" onclick="openCheckout('Ventilated Brake Disc Rotor', 180.00)">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="transmission">
-                    <button class="wishlist-btn" data-id="clutch-kit" aria-label="Add to wishlist">
-                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"></path></svg>
-                    </button>
-                    <div class="product-img-container">
-                        <img src="images/s-l1200.jpg" alt="High Performance Clutch Kit" class="product-img">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-category">Transmission Drivetrain</span>
-                        <h3>OEM Replacement Clutch Kit</h3>
-                        <p>Specially manufactured for manual transmissions (Proton Saga/Persona). Includes organic clutch plate, pressure plate, and release bearing.</p>
-                        <div class="price-row">
-                            <span class="price">RM 320.00</span>
-                            <button class="btn" onclick="openCheckout('OEM Replacement Clutch Kit', 320.00)">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="cooling">
-                    <button class="wishlist-btn" data-id="radiator" aria-label="Add to wishlist">
-                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"></path></svg>
-                    </button>
-                    <div class="product-img-container">
-                        <img src="images/Aluminum Dual-Core Radiator.jpg" alt="Dual-Core Radiator" class="product-img">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-category">Cooling System</span>
-                        <h3>Aluminum Dual-Core Radiator</h3>
-                        <p>High-efficiency cooling matrix for optimized engine heat regulation. Built with reinforced anti-corrosive aluminum tanks.</p>
-                        <div class="price-row">
-                            <span class="price">RM 285.00</span>
-                            <button class="btn" onclick="openCheckout('Aluminum Dual-Core Radiator', 285.00)">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="electrical">
-                    <button class="wishlist-btn" data-id="alternator" aria-label="Add to wishlist">
-                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"></path></svg>
-                    </button>
-                    <div class="product-img-container">
-                        <img src="images/High Output Alternator (90A).webp" alt="High Output Alternator" class="product-img">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-category">Electrical Infrastructure</span>
-                        <h3>High Output Alternator (90A)</h3>
-                        <p>Upgraded charging power supply for auxiliary electronics. Ensures uniform voltage distribution and heavy-duty current delivery.</p>
-                        <div class="price-row">
-                            <span class="price">RM 260.00</span>
-                            <button class="btn" onclick="openCheckout('High Output Alternator (90A)', 260.00)">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="lighting">
-                    <button class="wishlist-btn" data-id="led-headlight" aria-label="Add to wishlist">
-                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"></path></svg>
-                    </button>
-                    <div class="product-img-container">
-                        <img src="images/Premium LED Headlight Conversion Kit.jpg" alt="LED Headlight Bulbs" class="product-img">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-category">Lighting & Vision</span>
-                        <h3>Premium LED Headlight Conversion Kit</h3>
-                        <p>Crystal clear 6000K diamond white output. Featuring targeted beam-patterns, anti-glare projection, and internal cooling fans.</p>
-                        <div class="price-row">
-                            <span class="price">RM 145.00</span>
-                            <button class="btn" onclick="openCheckout('Premium LED Headlight Conversion Kit', 145.00)">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="transmission">
-                    <button class="wishlist-btn" data-id="drive-shaft" aria-label="Add to wishlist">
-                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"></path></svg>
-                    </button>
-                    <div class="product-img-container">
-                        <img src="images/Front Drive Shaft Assembly (LeftRight).avif" alt="Drive Shaft Assembly" class="product-img">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-category">Transmission Drivetrain</span>
-                        <h3>Front Drive Shaft Assembly (Left/Right)</h3>
-                        <p>Precision-balanced steel shafts complete with durable rubber boots and premium synthetic grease for smooth rotational torque transfer.</p>
-                        <div class="price-row">
-                            <span class="price">RM 195.00</span>
-                            <button class="btn" onclick="openCheckout('Front Drive Shaft Assembly', 195.00)">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="engine">
-                    <button class="wishlist-btn" data-id="air-filter" aria-label="Add to wishlist">
-                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"></path></svg>
-                    </button>
-                    <div class="product-img-container">
-                        <img src="images/High-Flow Engine Air Filter.jpeg" alt="Engine Air Filter" class="product-img">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-category">Engine Powertrain</span>
-                        <h3>High-Flow Engine Air Filter</h3>
-                        <p>Multi-layered filtration fibers designed to catch micro-particles while maximizing air induction volumes for fuel efficiency.</p>
-                        <div class="price-row">
-                            <span class="price">RM 45.00</span>
-                            <button class="btn" onclick="openCheckout('High-Flow Engine Air Filter', 45.00)">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="no-results" id="noResults">
-                <h3>No matching components</h3>
-                <p>Try a different category or search term.</p>
-            </div>
-        </div>
-    </section>
-
-    <div id="checkoutModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Secure Online <span>Billing</span></h3>
-                <span class="close-btn" onclick="closeCheckout()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="billing-summary">
-                    <div class="summary-row">
-                        <span>Selected Component:</span>
-                        <span id="summaryItemName" style="color: white; font-weight: 600;">-</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>Quantity:</span>
-                        <div class="qty-stepper">
-                            <button type="button" onclick="changeQty(-1)" aria-label="Decrease quantity">&minus;</button>
-                            <span id="qtyValue">1</span>
-                            <button type="button" onclick="changeQty(1)" aria-label="Increase quantity">+</button>
-                        </div>
-                    </div>
-                    <div class="summary-row">
-                        <span>Subtotal:</span>
-                        <span id="summaryItemPrice">RM 0.00</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>Logistic / Shipping Fee:</span>
-                        <span id="summaryShipping">RM 10.00</span>
-                    </div>
-                    <div class="summary-row total">
-                        <span>Total Payable Amount:</span>
-                        <span id="summaryTotal">RM 0.00</span>
-                    </div>
-                </div>
-
-                <div id="successMessage" class="success-message"></div>
-                <form id="billingForm" onsubmit="processPayment(event)">
-                    <div class="form-group">
-                        <label for="custName">Customer Name</label>
-                        <input type="text" id="custName" required placeholder="Enter your full name">
-                    </div>
-                    <div class="form-group">
-                        <label for="custPhone">Phone / WhatsApp Number</label>
-                        <input type="tel" id="custPhone" required placeholder="e.g., 0123456789">
-                    </div>
-                    <div class="form-group">
-                        <label for="custAddress">Shipping Address</label>
-                        <textarea id="custAddress" rows="2" required placeholder="Enter complete delivery address"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Preferred Payment Engine</label>
-                        <div class="payment-gateways">
-                            <input type="radio" id="fpx" name="paymentMethod" value="FPX Online Banking" checked style="display:none;">
-                            <label for="fpx" class="gateway-label">FPX Banking</label>
-
-                            <input type="radio" id="card" name="paymentMethod" value="Credit / Debit Card" style="display:none;">
-                            <label for="card" class="gateway-label">Visa / MasterCard</label>
-
-                            <input type="radio" id="ewallet" name="paymentMethod" value="E-Wallet (TNG/Setel)" style="display:none;">
-                            <label for="ewallet" class="gateway-label">TNG E-Wallet</label>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Authorize & Pay Now</button>
-                </form>
-            </div>
-        </div>
+   </nav>
+  </div>
+ </header>
+ <nav aria-label="Sidebar navigation" class="sidebar" id="sidebar-menu">
+  <div class="sidebar-top">
+   <div class="sidebar-brand">
+    RB
+    <span>
+     AUTO EMPIRE
+    </span>
+   </div>
+   <p>
+    Premium auto parts hub
+   </p>
+  </div>
+  <ul>
+   <li>
+    <a href="index.html">
+     Home
+    </a>
+   </li>
+   <li>
+    <a href="about.html">
+     About Us
+    </a>
+   </li>
+   <li>
+    <a class="active" href="products.html">
+     Products
+    </a>
+   </li>
+   <li>
+    <a href="contact.html">
+     Contact Us
+    </a>
+   </li>
+   <li>
+    <a href="disclaimer.html">
+     Disclaimer
+    </a>
+   </li>
+  </ul>
+ </nav>
+ <div class="overlay" id="overlay">
+ </div>
+ <main>
+  <section class="page-hero compact-hero">
+   <div class="container">
+    <span class="eyebrow">
+     Shop Online
+    </span>
+    <h1>
+     Authentic Components Catalogue
+    </h1>
+    <p>
+     Select your automotive component and settle payments instantly via our integrated secure checkout dashboard.
+    </p>
+   </div>
+  </section>
+  <section class="main-content">
+   <div class="container">
+    <div class="vehicle-finder glass-box" id="vehicleFinder">
+     <div>
+      <span class="eyebrow">
+       Smart Fitment
+      </span>
+      <h2>
+       Vehicle Parts Finder
+      </h2>
+      <p>
+       Choose your brand, model, and year to simulate compatible parts filtering.
+      </p>
+     </div>
+     <div class="finder-controls">
+      <select id="brandSelect">
+       <option value="">
+        Choose Brand
+       </option>
+       <option>
+        Perodua
+       </option>
+       <option>
+        Proton
+       </option>
+       <option>
+        Toyota
+       </option>
+       <option>
+        Honda
+       </option>
+      </select>
+      <select id="modelSelect">
+       <option value="">
+        Choose Model
+       </option>
+       <option>
+        Myvi
+       </option>
+       <option>
+        Saga
+       </option>
+       <option>
+        Vios
+       </option>
+       <option>
+        Civic
+       </option>
+      </select>
+      <select id="yearSelect">
+       <option value="">
+        Year
+       </option>
+       <option>
+        2024
+       </option>
+       <option>
+        2023
+       </option>
+       <option>
+        2022
+       </option>
+       <option>
+        2021
+       </option>
+       <option>
+        2020
+       </option>
+       <option>
+        2019
+       </option>
+      </select>
+      <button class="btn" id="findPartsBtn" type="button">
+       Find Parts
+      </button>
+     </div>
     </div>
-
-    
-</main>
-
-<footer class="mega-footer">
-    <div class="container footer-grid">
-        <div><div class="logo-text">RB <span>AUTO EMPIRE</span></div><p>Premium auto parts hub for academic web design demonstration.</p></div>
-        <div><h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a><a href="contact.html">Contact</a></div>
-        <div><h4>Support</h4><a href="products.html#vehicleFinder">Vehicle Finder</a><a href="disclaimer.html">Disclaimer</a><a href="admin.html">Admin Dashboard</a></div>
-        <div><h4>Payment Demo</h4><p>FPX • Visa • Mastercard • TNG</p><p>&copy; 2026 RB Auto Empire | UiTM IMD318</p></div>
+    <div class="filter-bar">
+     <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">
+       All Parts
+      </button>
+      <button class="filter-tab" data-filter="engine">
+       Engine
+      </button>
+      <button class="filter-tab" data-filter="braking">
+       Braking
+      </button>
+      <button class="filter-tab" data-filter="handling">
+       Handling
+      </button>
+      <button class="filter-tab" data-filter="electrical">
+       Electrical
+      </button>
+      <button class="filter-tab" data-filter="transmission">
+       Transmission
+      </button>
+      <button class="filter-tab" data-filter="cooling">
+       Cooling
+      </button>
+      <button class="filter-tab" data-filter="lighting">
+       Lighting
+      </button>
+     </div>
+     <div class="search-box">
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+       <circle cx="11" cy="11" r="8">
+       </circle>
+       <line x1="21" x2="16.65" y1="21" y2="16.65">
+       </line>
+      </svg>
+      <input autocomplete="off" id="productSearch" placeholder="Search components..." type="text"/>
+      <div class="search-suggestions" id="searchSuggestions">
+      </div>
+     </div>
     </div>
-</footer>
-
-<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
-
-<button class="cart-floating" id="cartFloating" aria-label="Open shopping cart">🛒 <span id="cartCount">0</span></button>
-<a class="whatsapp-float" href="https://wa.me/60175466987?text=Hi%20RB%20Auto%20Empire%2C%20I%20want%20to%20ask%20about%20auto%20parts." target="_blank" aria-label="WhatsApp RB Auto Empire">💬<span>Need Help?</span></a>
-
-<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
-    <div class="cart-head"><h3>Your Cart</h3><button type="button" id="closeCart">&times;</button></div>
-    <div id="cartItems" class="cart-items"></div>
-    <div class="cart-total"><span>Total</span><strong id="cartTotal">RM 0.00</strong></div>
-    <button class="btn full-btn" id="checkoutCartBtn">Proceed Checkout</button>
-</aside>
-
-<div class="quick-view-modal" id="quickViewModal">
-    <div class="quick-view-card">
-        <button type="button" class="quick-close" id="quickClose">&times;</button>
-        <div class="quick-img-wrap"><img id="quickImg" src="" alt="Product preview"></div>
-        <div class="quick-info">
-            <span class="card-category" id="quickCategory">Component</span>
-            <h2 id="quickTitle">Product</h2>
-            <div class="rating-line">★★★★★ <span id="quickReviews">4.8 (120 Reviews)</span></div>
-            <p id="quickDesc">Premium automotive component with quality assurance.</p>
-            <ul class="quick-specs">
-                <li><b>Compatibility:</b> Selected Malaysian vehicles</li>
-                <li><b>Warranty:</b> 12 months limited warranty</li>
-                <li><b>Stock:</b> <span class="stock in">In Stock</span></li>
-            </ul>
-            <div class="quick-price" id="quickPrice">RM 0.00</div>
-            <div class="quick-actions">
-                <button class="btn" id="quickAddCart">Add to Cart</button>
-                <button class="btn btn-outline" id="quickBuyNow">Buy Now</button>
-            </div>
-        </div>
+    <div class="grid-cards">
+     <div class="card" data-category="engine">
+      <button aria-label="Add to wishlist" class="wishlist-btn" data-id="motor-oil">
+       <svg stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z">
+        </path>
+       </svg>
+      </button>
+      <div class="product-img-container">
+       <img alt="Fully Synthetic Engine Oil" class="product-img" src="images/Fully Synthetic Motor Oil (4L).jpeg"/>
+      </div>
+      <div class="card-info">
+       <span class="card-category">
+        Engine Powertrain
+       </span>
+       <h3>
+        Fully Synthetic Motor Oil (4L)
+       </h3>
+       <p>
+        Premium 5W-40 viscosity rating. Advanced thermal control additives designed for high-stress operation and sludge defense.
+       </p>
+       <div class="price-row">
+        <span class="price">
+         RM 165.00
+        </span>
+        <button class="btn" onclick="openCheckout('Fully Synthetic Motor Oil (4L)', 165.00)">
+         Order Now
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="card" data-category="braking">
+      <button aria-label="Add to wishlist" class="wishlist-btn" data-id="brake-pads">
+       <svg stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z">
+        </path>
+       </svg>
+      </button>
+      <div class="product-img-container">
+       <img alt="Ceramic Brake Pads" class="product-img" src="images/Ceramic-Brake-Pads.jpg"/>
+      </div>
+      <div class="card-info">
+       <span class="card-category">
+        Braking Safety
+       </span>
+       <h3>
+        Ceramic Front Brake Pads
+       </h3>
+       <p>
+        Engineered for Perodua Myvi and Alza models. Extreme structural noise mitigation paired with highly responsive bite matrices.
+       </p>
+       <div class="price-row">
+        <span class="price">
+         RM 75.00
+        </span>
+        <button class="btn" onclick="openCheckout('Ceramic Front Brake Pads', 75.00)">
+         Order Now
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="card" data-category="handling">
+      <button aria-label="Add to wishlist" class="wishlist-btn" data-id="shock-absorbers">
+       <svg stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z">
+        </path>
+       </svg>
+      </button>
+      <div class="product-img-container">
+       <img alt="Shock Absorbers" class="product-img" src="images/Heavy-Duty Gas Shock Absorbers.jpeg"/>
+      </div>
+      <div class="card-info">
+       <span class="card-category">
+        Handling &amp; Steering
+       </span>
+       <h3>
+        Heavy-Duty Gas Shock Absorbers
+       </h3>
+       <p>
+        Front-axle premium gas absorbers designed for high cornering stability, balanced tracking, and road vibration dampening.
+       </p>
+       <div class="price-row">
+        <span class="price">
+         RM 240.00
+        </span>
+        <button class="btn" onclick="openCheckout('Heavy-Duty Gas Shock Absorbers', 240.00)">
+         Order Now
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="card" data-category="engine">
+      <button aria-label="Add to wishlist" class="wishlist-btn" data-id="spark-plugs">
+       <svg stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z">
+        </path>
+       </svg>
+      </button>
+      <div class="product-img-container">
+       <img alt="Iridium Spark Plugs" class="product-img" src="images/Laser Iridium Spark Plugs.jpeg"/>
+      </div>
+      <div class="card-info">
+       <span class="card-category">
+        Engine Ignition
+       </span>
+       <h3>
+        Laser Iridium Spark Plugs
+       </h3>
+       <p>
+        Optimizes total combustion efficiency, lowers fuel emission footprints, and guarantees faster cold-start responses. Set of 4 units.
+       </p>
+       <div class="price-row">
+        <span class="price">
+         RM 120.00
+        </span>
+        <button class="btn" onclick="openCheckout('Laser Iridium Spark Plugs', 120.00)">
+         Order Now
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="card" data-category="electrical">
+      <button aria-label="Add to wishlist" class="wishlist-btn" data-id="battery">
+       <svg stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z">
+        </path>
+       </svg>
+      </button>
+      <div class="product-img-container">
+       <img alt="Maintenance-Free Battery" class="product-img" src="images/BOSCH NS60L.webp"/>
+      </div>
+      <div class="card-info">
+       <span class="card-category">
+        Electrical Infrastructure
+       </span>
+       <h3>
+        Maintenance-Free Battery (NS60L)
+       </h3>
+       <p>
+        High cold cranking amps (CCA) with advanced long-life alloy grids. Fully sealed dry architecture with zero maintenance upkeep.
+       </p>
+       <div class="price-row">
+        <span class="price">
+         RM 215.00
+        </span>
+        <button class="btn" onclick="openCheckout('Maintenance-Free Battery (NS60L)', 215.00)">
+         Order Now
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="card" data-category="braking">
+      <button aria-label="Add to wishlist" class="wishlist-btn" data-id="disc-rotor">
+       <svg stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z">
+        </path>
+       </svg>
+      </button>
+      <div class="product-img-container">
+       <img alt="Disc Rotor" class="product-img" src="images/Ventilated Brake Disc Rotor.webp"/>
+      </div>
+      <div class="card-info">
+       <span class="card-category">
+        Braking Safety
+       </span>
+       <h3>
+        Ventilated Brake Disc Rotor
+       </h3>
+       <p>
+        Cross-vented, anti-warp structural metal alloys designed to dissipate extreme thermal friction loads safely and mitigate brake fade.
+       </p>
+       <div class="price-row">
+        <span class="price">
+         RM 180.00
+        </span>
+        <button class="btn" onclick="openCheckout('Ventilated Brake Disc Rotor', 180.00)">
+         Order Now
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="card" data-category="transmission">
+      <button aria-label="Add to wishlist" class="wishlist-btn" data-id="clutch-kit">
+       <svg stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z">
+        </path>
+       </svg>
+      </button>
+      <div class="product-img-container">
+       <img alt="High Performance Clutch Kit" class="product-img" src="images/s-l1200.jpg"/>
+      </div>
+      <div class="card-info">
+       <span class="card-category">
+        Transmission Drivetrain
+       </span>
+       <h3>
+        OEM Replacement Clutch Kit
+       </h3>
+       <p>
+        Specially manufactured for manual transmissions (Proton Saga/Persona). Includes organic clutch plate, pressure plate, and release bearing.
+       </p>
+       <div class="price-row">
+        <span class="price">
+         RM 320.00
+        </span>
+        <button class="btn" onclick="openCheckout('OEM Replacement Clutch Kit', 320.00)">
+         Order Now
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="card" data-category="cooling">
+      <button aria-label="Add to wishlist" class="wishlist-btn" data-id="radiator">
+       <svg stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z">
+        </path>
+       </svg>
+      </button>
+      <div class="product-img-container">
+       <img alt="Dual-Core Radiator" class="product-img" src="images/Aluminum Dual-Core Radiator.jpg"/>
+      </div>
+      <div class="card-info">
+       <span class="card-category">
+        Cooling System
+       </span>
+       <h3>
+        Aluminum Dual-Core Radiator
+       </h3>
+       <p>
+        High-efficiency cooling matrix for optimized engine heat regulation. Built with reinforced anti-corrosive aluminum tanks.
+       </p>
+       <div class="price-row">
+        <span class="price">
+         RM 285.00
+        </span>
+        <button class="btn" onclick="openCheckout('Aluminum Dual-Core Radiator', 285.00)">
+         Order Now
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="card" data-category="electrical">
+      <button aria-label="Add to wishlist" class="wishlist-btn" data-id="alternator">
+       <svg stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z">
+        </path>
+       </svg>
+      </button>
+      <div class="product-img-container">
+       <img alt="High Output Alternator" class="product-img" src="images/High Output Alternator (90A).webp"/>
+      </div>
+      <div class="card-info">
+       <span class="card-category">
+        Electrical Infrastructure
+       </span>
+       <h3>
+        High Output Alternator (90A)
+       </h3>
+       <p>
+        Upgraded charging power supply for auxiliary electronics. Ensures uniform voltage distribution and heavy-duty current delivery.
+       </p>
+       <div class="price-row">
+        <span class="price">
+         RM 260.00
+        </span>
+        <button class="btn" onclick="openCheckout('High Output Alternator (90A)', 260.00)">
+         Order Now
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="card" data-category="lighting">
+      <button aria-label="Add to wishlist" class="wishlist-btn" data-id="led-headlight">
+       <svg stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z">
+        </path>
+       </svg>
+      </button>
+      <div class="product-img-container">
+       <img alt="LED Headlight Bulbs" class="product-img" src="images/Premium LED Headlight Conversion Kit.jpg"/>
+      </div>
+      <div class="card-info">
+       <span class="card-category">
+        Lighting &amp; Vision
+       </span>
+       <h3>
+        Premium LED Headlight Conversion Kit
+       </h3>
+       <p>
+        Crystal clear 6000K diamond white output. Featuring targeted beam-patterns, anti-glare projection, and internal cooling fans.
+       </p>
+       <div class="price-row">
+        <span class="price">
+         RM 145.00
+        </span>
+        <button class="btn" onclick="openCheckout('Premium LED Headlight Conversion Kit', 145.00)">
+         Order Now
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="card" data-category="transmission">
+      <button aria-label="Add to wishlist" class="wishlist-btn" data-id="drive-shaft">
+       <svg stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z">
+        </path>
+       </svg>
+      </button>
+      <div class="product-img-container">
+       <img alt="Drive Shaft Assembly" class="product-img" src="images/Front Drive Shaft Assembly (LeftRight).avif"/>
+      </div>
+      <div class="card-info">
+       <span class="card-category">
+        Transmission Drivetrain
+       </span>
+       <h3>
+        Front Drive Shaft Assembly (Left/Right)
+       </h3>
+       <p>
+        Precision-balanced steel shafts complete with durable rubber boots and premium synthetic grease for smooth rotational torque transfer.
+       </p>
+       <div class="price-row">
+        <span class="price">
+         RM 195.00
+        </span>
+        <button class="btn" onclick="openCheckout('Front Drive Shaft Assembly', 195.00)">
+         Order Now
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="card" data-category="engine">
+      <button aria-label="Add to wishlist" class="wishlist-btn" data-id="air-filter">
+       <svg stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z">
+        </path>
+       </svg>
+      </button>
+      <div class="product-img-container">
+       <img alt="Engine Air Filter" class="product-img" src="images/High-Flow Engine Air Filter.jpeg"/>
+      </div>
+      <div class="card-info">
+       <span class="card-category">
+        Engine Powertrain
+       </span>
+       <h3>
+        High-Flow Engine Air Filter
+       </h3>
+       <p>
+        Multi-layered filtration fibers designed to catch micro-particles while maximizing air induction volumes for fuel efficiency.
+       </p>
+       <div class="price-row">
+        <span class="price">
+         RM 45.00
+        </span>
+        <button class="btn" onclick="openCheckout('High-Flow Engine Air Filter', 45.00)">
+         Order Now
+        </button>
+       </div>
+      </div>
+     </div>
     </div>
-</div>
-
-<div class="compare-bar" id="compareBar">
-    <span id="compareText">Select 2 products to compare</span>
-    <button type="button" class="btn small-btn" id="compareNow">Compare</button>
-    <button type="button" class="btn btn-outline small-btn" id="clearCompare">Clear</button>
-</div>
-
-<div class="quick-view-modal" id="compareModal">
-    <div class="quick-view-card compare-card">
-        <button type="button" class="quick-close" id="compareClose">&times;</button>
-        <div class="quick-info full-width">
-            <span class="eyebrow">Smart Comparison</span>
-            <h2>Product Comparison</h2>
-            <div id="compareTableWrap"></div>
-        </div>
+    <div class="no-results" id="noResults">
+     <h3>
+      No matching components
+     </h3>
+     <p>
+      Try a different category or search term.
+     </p>
     </div>
-</div>
-
-<script src="script.js"></script>
+   </div>
+  </section>
+  <div class="modal" id="checkoutModal">
+   <div class="modal-content">
+    <div class="modal-header">
+     <h3>
+      Secure Online
+      <span>
+       Billing
+      </span>
+     </h3>
+     <span class="close-btn" onclick="closeCheckout()">
+      ×
+     </span>
+    </div>
+    <div class="modal-body">
+     <div class="billing-summary">
+      <div class="summary-row">
+       <span>
+        Selected Component:
+       </span>
+       <span id="summaryItemName" style="color: white; font-weight: 600;">
+        -
+       </span>
+      </div>
+      <div class="summary-row">
+       <span>
+        Quantity:
+       </span>
+       <div class="qty-stepper">
+        <button aria-label="Decrease quantity" onclick="changeQty(-1)" type="button">
+         −
+        </button>
+        <span id="qtyValue">
+         1
+        </span>
+        <button aria-label="Increase quantity" onclick="changeQty(1)" type="button">
+         +
+        </button>
+       </div>
+      </div>
+      <div class="summary-row">
+       <span>
+        Subtotal:
+       </span>
+       <span id="summaryItemPrice">
+        RM 0.00
+       </span>
+      </div>
+      <div class="summary-row">
+       <span>
+        Logistic / Shipping Fee:
+       </span>
+       <span id="summaryShipping">
+        RM 10.00
+       </span>
+      </div>
+      <div class="summary-row total">
+       <span>
+        Total Payable Amount:
+       </span>
+       <span id="summaryTotal">
+        RM 0.00
+       </span>
+      </div>
+     </div>
+     <div class="success-message" id="successMessage">
+     </div>
+     <form id="billingForm" onsubmit="processPayment(event)">
+      <div class="form-group">
+       <label for="custName">
+        Customer Name
+       </label>
+       <input id="custName" placeholder="Enter your full name" required="" type="text"/>
+      </div>
+      <div class="form-group">
+       <label for="custPhone">
+        Phone / WhatsApp Number
+       </label>
+       <input id="custPhone" placeholder="e.g., 0123456789" required="" type="tel"/>
+      </div>
+      <div class="form-group">
+       <label for="custAddress">
+        Shipping Address
+       </label>
+       <textarea id="custAddress" placeholder="Enter complete delivery address" required="" rows="2"></textarea>
+      </div>
+      <div class="form-group">
+       <label>
+        Preferred Payment Engine
+       </label>
+       <div class="payment-gateways">
+        <input checked="" id="fpx" name="paymentMethod" style="display:none;" type="radio" value="FPX Online Banking"/>
+        <label class="gateway-label" for="fpx">
+         FPX Banking
+        </label>
+        <input id="card" name="paymentMethod" style="display:none;" type="radio" value="Credit / Debit Card"/>
+        <label class="gateway-label" for="card">
+         Visa / MasterCard
+        </label>
+        <input id="ewallet" name="paymentMethod" style="display:none;" type="radio" value="E-Wallet (TNG/Setel)"/>
+        <label class="gateway-label" for="ewallet">
+         TNG E-Wallet
+        </label>
+       </div>
+      </div>
+      <button class="btn" style="width: 100%; margin-top: 10px;" type="submit">
+       Authorize &amp; Pay Now
+      </button>
+     </form>
+    </div>
+   </div>
+  </div>
+ </main>
+ <footer class="mega-footer">
+  <div class="container footer-grid">
+   <div>
+    <div class="logo-text">
+     RB
+     <span>
+      AUTO EMPIRE
+     </span>
+    </div>
+    <p>
+     Premium auto parts hub for academic web design demonstration.
+    </p>
+   </div>
+   <div>
+    <h4>
+     Quick Links
+    </h4>
+    <a href="index.html">
+     Home
+    </a>
+    <a href="about.html">
+     About Us
+    </a>
+    <a href="products.html">
+     Products
+    </a>
+    <a href="contact.html">
+     Contact
+    </a>
+   </div>
+   <div>
+    <h4>
+     Support
+    </h4>
+    <a href="products.html#vehicleFinder">
+     Vehicle Finder
+    </a>
+    <a href="disclaimer.html">
+     Disclaimer
+    </a>
+    <a href="admin.html">
+     Admin Dashboard
+    </a>
+   </div>
+   <div>
+    <h4>
+     Payment Demo
+    </h4>
+    <p>
+     FPX • Visa • Mastercard • TNG
+    </p>
+    <p>
+     © 2026 RB Auto Empire | UiTM IMD318
+    </p>
+   </div>
+  </div>
+ </footer>
+ <button aria-label="Back to top" class="back-to-top" id="backToTop">
+  ↑
+ </button>
+ <button aria-label="Open shopping cart" class="cart-floating" id="cartFloating">
+  🛒
+  <span id="cartCount">
+   0
+  </span>
+ </button>
+ <a aria-label="WhatsApp RB Auto Empire" class="whatsapp-float" href="https://wa.me/60175466987?text=Hi%20RB%20Auto%20Empire%2C%20I%20want%20to%20ask%20about%20auto%20parts." target="_blank">
+  💬
+  <span>
+   Need Help?
+  </span>
+ </a>
+ <aside aria-label="Shopping cart" class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+   <h3>
+    Your Cart
+   </h3>
+   <button id="closeCart" type="button">
+    ×
+   </button>
+  </div>
+  <div class="cart-items" id="cartItems">
+  </div>
+  <div class="cart-total">
+   <span>
+    Total
+   </span>
+   <strong id="cartTotal">
+    RM 0.00
+   </strong>
+  </div>
+  <button class="btn full-btn" id="checkoutCartBtn">
+   Proceed Checkout
+  </button>
+ </aside>
+ <div class="quick-view-modal" id="quickViewModal">
+  <div class="quick-view-card">
+   <button class="quick-close" id="quickClose" type="button">
+    ×
+   </button>
+   <div class="quick-img-wrap">
+    <img alt="Product preview" id="quickImg" src=""/>
+   </div>
+   <div class="quick-info">
+    <span class="card-category" id="quickCategory">
+     Component
+    </span>
+    <h2 id="quickTitle">
+     Product
+    </h2>
+    <div class="rating-line">
+     ★★★★★
+     <span id="quickReviews">
+      4.8 (120 Reviews)
+     </span>
+    </div>
+    <p id="quickDesc">
+     Premium automotive component with quality assurance.
+    </p>
+    <ul class="quick-specs">
+     <li>
+      <b>
+       Compatibility:
+      </b>
+      Selected Malaysian vehicles
+     </li>
+     <li>
+      <b>
+       Warranty:
+      </b>
+      12 months limited warranty
+     </li>
+     <li>
+      <b>
+       Stock:
+      </b>
+      <span class="stock in">
+       In Stock
+      </span>
+     </li>
+    </ul>
+    <div class="quick-price" id="quickPrice">
+     RM 0.00
+    </div>
+    <div class="quick-actions">
+     <button class="btn" id="quickAddCart">
+      Add to Cart
+     </button>
+     <button class="btn btn-outline" id="quickBuyNow">
+      Buy Now
+     </button>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="compare-bar" id="compareBar">
+  <span id="compareText">
+   Select 2 products to compare
+  </span>
+  <button class="btn small-btn" id="compareNow" type="button">
+   Compare
+  </button>
+  <button class="btn btn-outline small-btn" id="clearCompare" type="button">
+   Clear
+  </button>
+ </div>
+ <div class="quick-view-modal" id="compareModal">
+  <div class="quick-view-card compare-card">
+   <button class="quick-close" id="compareClose" type="button">
+    ×
+   </button>
+   <div class="quick-info full-width">
+    <span class="eyebrow">
+     Smart Comparison
+    </span>
+    <h2>
+     Product Comparison
+    </h2>
+    <div id="compareTableWrap">
+    </div>
+   </div>
+  </div>
+ </div>
+ <script src="script.js">
+ </script>
 </body>
-</html>
+
