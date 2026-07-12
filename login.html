@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Login to the RB Auto Empire customer portal."
+    />
+    <title>RB Auto Empire | Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="login-page">
+    <div class="page-loader" id="pageLoader">
+      <div class="loader-mark"></div>
+    </div>
+    <div class="redline-bar"><span></span></div>
+
+    <header class="site-header">
+      <div class="container header-box">
+        <div class="left-group">
+          <button
+            class="menu-toggle"
+            id="mobile-menu"
+            type="button"
+            aria-label="Open sidebar menu"
+            aria-expanded="false"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
+          <a href="index.html" class="logo-area" aria-label="RB Auto Empire Home">
+            <img
+              src="images/RB_Auto_Empire_Logo.png"
+              alt="RB Auto Empire Logo"
+              class="company-logo-img"
+            />
+            <div class="logo-text">RB <span>AUTO EMPIRE</span></div>
+          </a>
+        </div>
+
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+            <li><a href="login.html" class="active nav-login">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <nav class="sidebar" id="sidebar-menu" aria-label="Sidebar navigation">
+      <div class="sidebar-top">
+        <div class="sidebar-brand">RB <span>AUTO EMPIRE</span></div>
+        <p>Premium auto parts hub</p>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+        <li><a href="login.html" class="active">Login</a></li>
+      </ul>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+
+    <main class="login-main">
+      <section class="login-section" aria-labelledby="loginTitle">
+        <div class="login-backdrop" aria-hidden="true"></div>
+
+        <div class="container login-layout">
+          <div class="login-intro">
+            <span class="eyebrow">Customer Access</span>
+            <h1 id="loginTitle">Welcome Back</h1>
+            <p>
+              Sign in to continue exploring premium automotive components,
+              saved products, and simulated customer services.
+            </p>
+
+            <div class="login-benefits">
+              <div>
+                <strong>Secure Demo</strong>
+                <span>Front-end academic simulation</span>
+              </div>
+              <div>
+                <strong>Quick Access</strong>
+                <span>Reach products and account features</span>
+              </div>
+              <div>
+                <strong>Responsive</strong>
+                <span>Designed for desktop and mobile</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="login-card">
+            <div class="login-card-heading">
+              <span class="login-icon" aria-hidden="true">◆</span>
+              <h2>Member Login</h2>
+              <p>Enter your account details below.</p>
+            </div>
+
+            <form id="loginForm" class="login-form" novalidate>
+              <div class="form-group">
+                <label for="loginEmail">Email Address</label>
+                <input
+                  id="loginEmail"
+                  name="email"
+                  type="email"
+                  placeholder="name@example.com"
+                  autocomplete="email"
+                  required
+                />
+                <small class="field-error" id="emailError"></small>
+              </div>
+
+              <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <div class="password-field">
+                  <input
+                    id="loginPassword"
+                    name="password"
+                    type="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    minlength="6"
+                    required
+                  />
+                  <button
+                    id="togglePassword"
+                    class="password-toggle"
+                    type="button"
+                    aria-label="Show password"
+                    aria-pressed="false"
+                  >
+                    Show
+                  </button>
+                </div>
+                <small class="field-error" id="passwordError"></small>
+              </div>
+
+              <div class="login-options">
+                <label class="remember-option">
+                  <input id="rememberLogin" type="checkbox" />
+                  <span>Remember me</span>
+                </label>
+                <a href="#" id="forgotPassword">Forgot password?</a>
+              </div>
+
+              <button class="btn full-btn login-submit" type="submit">
+                <span class="login-button-text">Sign In</span>
+                <span class="login-spinner" aria-hidden="true"></span>
+              </button>
+
+              <p class="login-demo-note">
+                This login form is a front-end demonstration. Any valid email
+                and a password containing at least six characters will work.
+              </p>
+            </form>
+
+            <div
+              class="login-status"
+              id="loginStatus"
+              role="status"
+              aria-live="polite"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mega-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="logo-text">RB <span>AUTO EMPIRE</span></div>
+          <p>Premium auto parts hub for academic web design demonstration.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <a href="products.html#vehicleFinder">Vehicle Finder</a>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="admin.html">Admin Dashboard</a>
+        </div>
+        <div>
+          <h4>Project</h4>
+          <p>Front-end login simulation</p>
+          <p>&copy; 2026 RB Auto Empire | UiTM IMD318</p>
+        </div>
+      </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+    <script src="script.js"></script>
+  </body>
+</html>

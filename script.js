@@ -828,3 +828,185 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2200);
   });
 });
+
+
+/* ======================================================
+   FRONT-END ACCOUNT DEMO
+   ====================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const accountStorageKey = "rbae_demo_account";
+
+  const setError = (fieldId, message = "") => {
+    const field = document.getElementById(fieldId);
+    const error = document.querySelector(`[data-error-for="${fieldId}"]`);
+
+    if (field) field.classList.toggle("input-error", Boolean(message));
+    if (error) error.textContent = message;
+  };
+
+  const clearFormErrors = (form) => {
+    form.querySelectorAll(".field-error").forEach((item) => {
+      item.textContent = "";
+    });
+    form.querySelectorAll(".input-error").forEach((item) => {
+      item.classList.remove("input-error");
+    });
+  };
+
+  document.querySelectorAll("[data-password-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const field = document.getElementById(button.dataset.passwordToggle);
+      if (!field) return;
+
+      const shouldShow = field.type === "password";
+      field.type = shouldShow ? "text" : "password";
+      button.textContent = shouldShow ? "Hide" : "Show";
+      button.setAttribute(
+        "aria-label",
+        shouldShow ? "Hide password" : "Show password",
+      );
+    });
+  });
+
+  const signupPassword = document.getElementById("signupPassword");
+  const passwordStrength = document.getElementById("passwordStrength");
+
+  signupPassword?.addEventListener("input", () => {
+    const password = signupPassword.value;
+    let strength = 0;
+
+    if (password.length >= 6) strength += 1;
+    if (/[A-Z]/.test(password) && /[a-z]/.test(password)) strength += 1;
+    if (/\d/.test(password)) strength += 1;
+    if (/[^A-Za-z0-9]/.test(password) && password.length >= 8) strength += 1;
+
+    passwordStrength?.setAttribute("data-strength", String(strength));
+  });
+
+  const signupForm = document.getElementById("signupForm");
+
+  signupForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    clearFormErrors(signupForm);
+
+    const firstName = document.getElementById("signupFirstName").value.trim();
+    const lastName = document.getElementById("signupLastName").value.trim();
+    const email = document.getElementById("signupEmail").value.trim().toLowerCase();
+    const password = document.getElementById("signupPassword").value;
+    const confirmPassword = document.getElementById(
+      "signupConfirmPassword",
+    ).value;
+    const terms = document.getElementById("signupTerms").checked;
+
+    let isValid = true;
+
+    if (firstName.length < 2) {
+      setError("signupFirstName", "Please enter your first name.");
+      isValid = false;
+    }
+
+    if (lastName.length < 2) {
+      setError("signupLastName", "Please enter your last name.");
+      isValid = false;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("signupEmail", "Please enter a valid email address.");
+      isValid = false;
+    }
+
+    if (password.length < 6) {
+      setError("signupPassword", "Password must contain at least 6 characters.");
+      isValid = false;
+    }
+
+    if (password !== confirmPassword) {
+      setError("signupConfirmPassword", "The passwords do not match.");
+      isValid = false;
+    }
+
+    if (!terms) {
+      setError("signupTerms", "Please agree to the demo terms.");
+      isValid = false;
+    }
+
+    if (!isValid) return;
+
+    const account = {
+      firstName,
+      lastName,
+      email,
+      password,
+      createdAt: new Date().toISOString(),
+    };
+
+    localStorage.setItem(accountStorageKey, JSON.stringify(account));
+    showToast("Account created successfully. Redirecting to sign in.", "success");
+
+    window.setTimeout(() => {
+      window.location.href = "signin.html";
+    }, 1100);
+  });
+
+  const signinForm = document.getElementById("signinForm");
+
+  signinForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    clearFormErrors(signinForm);
+
+    const email = document.getElementById("signinEmail").value.trim().toLowerCase();
+    const password = document.getElementById("signinPassword").value;
+
+    let account = null;
+    try {
+      account = JSON.parse(localStorage.getItem(accountStorageKey));
+    } catch (error) {
+      account = null;
+    }
+
+    let isValid = true;
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("signinEmail", "Please enter a valid email address.");
+      isValid = false;
+    }
+
+    if (password.length < 6) {
+      setError("signinPassword", "Please enter your password.");
+      isValid = false;
+    }
+
+    if (!isValid) return;
+
+    if (!account) {
+      showToast("No demo account was found. Please create an account first.");
+      return;
+    }
+
+    if (email !== account.email || password !== account.password) {
+      showToast("The email address or password is incorrect.");
+      return;
+    }
+
+    sessionStorage.setItem(
+      "rbae_signed_in",
+      JSON.stringify({
+        firstName: account.firstName,
+        email: account.email,
+        signedInAt: new Date().toISOString(),
+      }),
+    );
+
+    showToast(`Welcome back, ${account.firstName}!`, "success");
+
+    window.setTimeout(() => {
+      window.location.href = "index.html";
+    }, 900);
+  });
+
+  document.getElementById("forgotPassword")?.addEventListener("click", () => {
+    showToast(
+      "This front-end demo does not send reset emails. Create a new local account if needed.",
+    );
+  });
+});
